@@ -1,12 +1,14 @@
-def self_number(num):
-    self_num = num
-    while num != 0:
-        self_num += num%10 
-        num //= 10
-    return self_num
-        
-result = []
-for i in list(range(1,10001)):
-    result.append(self_number(i)) 
-    if i not in result: 
-        print(i)
+def d(n):
+    num = list(str(n))
+    asw = n
+    for i in range(len(num)):
+        asw += int(num[i])
+    return asw
+
+set = list(range(1,10001))
+for n in range(1,10001):
+    if d(n) in set:
+        set.remove(d(n))
+    
+for i in range(len(set)):
+    print(set[i])
